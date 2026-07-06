@@ -1,0 +1,58 @@
+/*function greet(name, greeting = "Watsap!"){
+    console.log(`${greeting} ${name}`)
+}
+
+greet("Malcom", "Waiatsei!")*/
+
+// function isEven(num = prompt("Enter a number")){
+//     if(num % 2 ===0 && num === Number(num)){
+//         console.log(`${num} is even`)
+//     }else{
+//         console.log(`${num} is odd`)
+//     }
+// }
+
+// isEven()
+
+// const calculateTotal = (price, quantity, taxRate = 0.15) => {
+//     const total = price * quantity * (1 + taxRate)
+//     return total
+// } 
+
+// console.log(calculateTotal(20, 3))
+
+
+// function greetNames(names, callback){
+//     for(let i = 0; i < names.length; i++){
+//         callback(names[i])
+//     }
+// }
+
+// greetNames(["Alice", "Bob", "Shamain", "Marlon", "Mike"], function(name){
+//     console.log(`Hello ${name}`)
+// })
+
+
+// const book = {
+//     title: "The Great Gatsby",
+//     author: "F. Scott Fitzgerald",
+//     pages: 178,
+//     isRead: true
+// }
+
+// console.log(`Last read: ${book["title"]} by ${book.author}. You completed 16/${book.pages} pages.`)
+
+const book = {
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  pages: 310,
+  isRead: true
+};
+
+// Unpack the properties out of the book object
+const { title, author, pages, isRead } = book;
+
+// Now you can use them directly without typing "book." every time!
+const sentenceDestructured = `I just finished reading "${title}" by ${author}. It has ${pages} pages.`;
+
+console.log(sentenceDestructured);
