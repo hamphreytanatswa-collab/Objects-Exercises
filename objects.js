@@ -77,3 +77,61 @@ bookTracker.addBook("Educated", "Tara Westover");
 bookTracker.markAsRead("Dune");
 
 console.log(bookTracker.getUnreadBooks()); 
+
+
+// Exercise 3
+const bookTracker = {
+  books: [],
+
+  addBook(title, author) {
+    this.books.push({ title, author, isRead: false });
+  },
+
+  markAsRead(title) {
+    const book = this.books.find((b) => b.title === title);
+
+    if (book) {
+      book.isRead = true;
+    } else {
+      console.log(`Couldn't find a book called "${title}".`);
+    }
+  },
+
+  getUnreadBooks() {
+    return this.books
+      .filter((b) => !b.isRead)
+      .map((b) => b.title);
+  },
+};
+
+bookTracker.addBook("Dune", "Frank Herbert");
+bookTracker.addBook("Educated", "Tara Westover");
+bookTracker.markAsRead("Dune");
+
+console.log(bookTracker.getUnreadBooks()); 
+
+const students = [
+  { name: "Wei", score: 88 },
+  { name: "Fatima", score: 95 },
+  { name: "Diego", score: 72 },
+  { name: "Nia", score: 64 },
+  { name: "Sam", score: 91 },
+];
+
+function getAboveAverageStudents(students) {
+  
+  const totalScore = students.reduce((sum, student) => sum + student.score, 0);
+
+
+  const average = Number((totalScore / students.length).toFixed(2));
+
+  console.log(`Class Average: ${average}`);
+
+
+  return students
+    .filter((student) => student.score > average)
+    .map((student) => student.name);
+}
+
+console.log(getAboveAverageStudents(students));
+
